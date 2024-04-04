@@ -1,28 +1,28 @@
 tags: registry, harbor
 
-# D. 部署 harbor 私有仓库
+# D. Deploy harbor private warehouse
 
 <!-- TOC -->
 
-- [D. 部署 harbor 私有仓库](#d-部署-harbor-私有仓库)
-    - [使用的变量](#使用的变量)
-    - [下载文件](#下载文件)
-    - [导入 docker images](#导入-docker-images)
-    - [创建 harbor nginx 服务器使用的 x509 证书](#创建-harbor-nginx-服务器使用的-x509-证书)
-    - [修改 harbor.cfg 文件](#修改-harborcfg-文件)
-    - [加载和启动 harbor 镜像](#加载和启动-harbor-镜像)
-    - [访问管理界面](#访问管理界面)
-    - [harbor 运行时产生的文件、目录](#harbor-运行时产生的文件目录)
-    - [docker 客户端登陆](#docker-客户端登陆)
-    - [其它操作](#其它操作)
+- [D. Deploy harbor private warehouse](#d-deployment-harbor-private warehouse)
+     - [Variables used](#Variables used)
+     - [Download file](#Download file)
+     - [Import docker images](#import-docker-images)
+     - [Create x509 certificate used by harbor nginx server](#create-harbor-nginx-x509-certificate used by server)
+     - [Modify harbor.cfg file](#modify-harborcfg-file)
+     - [Load and start harbor image](#load and start-harbor-mirror)
+     - [Access Management Interface](#access management interface)
+     - [Files and directories generated when harbor is run] (#harbor-Files and directories generated when harbor is run)
+     - [docker client login](#docker-client login)
+     - [Other operations](#Other operations)
 
 <!-- /TOC -->
 
-本文档介绍使用 docker-compose 部署 harbor 私有仓库的步骤，你也可以使用 docker 官方的 registry 镜像部署私有仓库([部署 Docker Registry](11-部署Docker-Registry.md))。
+This document introduces the steps to use docker-compose to deploy a harbor private warehouse. You can also use docker’s official registry image to deploy a private warehouse ([Deploy Docker Registry](11-Deploy Docker-Registry.md)).
 
-## 使用的变量
+## Variables used
 
-本文档用到的变量定义如下：
+The variables used in this document are defined as follows:
 
 ``` bash
 $ export NODE_IP=10.64.3.7 # 当前部署 harbor 的节点 IP
